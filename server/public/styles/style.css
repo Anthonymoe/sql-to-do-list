@@ -2,3 +2,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(245, 167, 138);
 }
+
+input {
+    width: 85%;
+    height: 30px;
+    font-size: 25px;
+}
+
+#addButton {
+    height: 30px;
+}

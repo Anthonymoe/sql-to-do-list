@@ -20,8 +20,6 @@ Phase 1: Set up full stack with GET route and db
 - create db w/table and some test data
 - connect to db and do a test query (SELECT *)
 
-Phase 2: POST
+Phase 2:
 
-Phase 3: DELETE
-
-Phase 4: UPDATE 
+- create front end experience that allows a user to create a task. 
