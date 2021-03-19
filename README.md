@@ -16,7 +16,7 @@ Phase 1: Set up full stack with GET route and db
 - npm install express and pg
 - set up server
 - basic interface(HTML/CSS)
-- set up router for inventor
+- set up router for to do list ( require and use server.js )
 - create db w/table and some test data
 - connect to db and do a test query (SELECT *)
 
