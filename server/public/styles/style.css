@@ -26,10 +26,12 @@ table, th, td {
 
 .Yes {
     background-color: rgba(31, 156, 31, 0.418);
+    color: rgb(76, 134, 76);
 }
 
 .No {
     background-color: rgba(197, 21, 21, 0.336);
+    color: firebrick;
 }
 
 body {
@@ -39,3 +41,4 @@ body {
 th {
     background-color: rgb(56, 122, 145);
 }
+

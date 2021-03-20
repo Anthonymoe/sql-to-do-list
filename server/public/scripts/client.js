@@ -43,6 +43,7 @@ function getList() {
         console.log( err );
         alert( 'problem' );
     })//end of ajax GET 
+    clear();
 }//end of getList
 
 //displays returned array on DOM - called in getList
@@ -103,3 +104,7 @@ function deleteTask(){
         console.log( err );
     })
 }//end of deleteTask 
+
+function clear(){
+    $( '#taskIn' ).val( '' );
+}
