@@ -23,3 +23,19 @@ table, th, td {
 .task {
     width: 80%;
 }
+
+.Yes {
+    background-color: rgba(31, 156, 31, 0.418);
+}
+
+.No {
+    background-color: rgba(197, 21, 21, 0.336);
+}
+
+body {
+    background-color: rgb(173, 216, 230);
+}
+
+th {
+    background-color: rgb(56, 122, 145);
+}

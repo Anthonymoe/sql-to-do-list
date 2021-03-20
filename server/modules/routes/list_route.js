@@ -5,7 +5,7 @@ const pool = require( '../pool' );
 //routes w/ logic 
 router.get( '/', ( req, res )=>{
     console.log( 'in list_route.js GET');
-    let queryString = `SELECT * FROM "items"`;
+    let queryString = `SELECT * FROM "items" ORDER BY "id" ASC`;
     pool.query( queryString ).then( ( results )=>{
         res.send( results.rows )
     }).catch( ( err )=>{
@@ -13,5 +13,44 @@ router.get( '/', ( req, res )=>{
         res.send( 500 );
     })
 })//end router.get
+
+router.post( '/', (req, res)=>{
+    console.log( 'in list_route.js POST');
+    let queryString = 'INSERT INTO "items"( "task", "completed" ) VALUES( $1, $2 );'
+    pool.query( queryString, [ req.body.task, req.body.complete ]).then((results)=> {
+        res.sendStatus( 200 );
+    }).catch( ( err ) => {
+        console.log( err )
+        res.sendStatus( 500 );
+    })
+})//end router.post 
+
+router.put( '/:id:complete', ( req, res ) =>{
+    console.log( 'in router.put:', req.params );
+    let queryString;
+    if ( req.params.complete == 'true' ){
+        queryString = `UPDATE "items" SET "completed" = false WHERE "id" = $1`;
+    }else {
+        queryString = `UPDATE "items" SET "completed" = true WHERE "id" = $1`;
+    }
+    pool.query( queryString , [req.params.id]).then( (results) =>{
+        res.sendStatus( 200 );
+    }).catch( (err) =>{
+        res.sendStatus( 500 );
+        console.log( err );
+    })
+})//end router.put
+
+router.delete( '/:id', ( req, res ) =>{
+    console.log( 'in router.delete:', req.params );
+    let queryString = `DELETE FROM "items" WHERE "id" = $1`;
+    pool.query( queryString , [req.params.id]).then( (results) =>{
+        res.sendStatus( 200 );
+    }).catch( (err) =>{
+        res.sendStatus( 500 );
+        console.log( err );
+    })
+})//end router.put
+
 //export 
 module.exports = router;

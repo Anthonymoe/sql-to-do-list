@@ -23,6 +23,10 @@ Phase 1: Set up full stack with GET route and db
 Phase 2:
 
 
-- set up GET route and make sure that response is appending to DOM []
-- create front end experience that allows a user to create a task []
-    - When the Task is created, it should be stored inside of a database - POST 
+- set up GET route and make sure that response is appending to DOM [x]
+- create front end experience that allows a user to create a task [x]
+    - When the Task is created, it should be stored inside of a database - POST [x]
+- set up PUT to update tasks being completed. 
+    -button click to change Completed: from No to Yes or vice versa
+    -button click will change bacground color of td to green if Yes
+    -button click will update database to reflect changes. 
