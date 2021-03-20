@@ -22,4 +22,7 @@ Phase 1: Set up full stack with GET route and db
 
 Phase 2:
 
-- create front end experience that allows a user to create a task. 
+
+- set up GET route and make sure that response is appending to DOM []
+- create front end experience that allows a user to create a task []
+    - When the Task is created, it should be stored inside of a database - POST 
