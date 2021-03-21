@@ -75,12 +75,13 @@ function displayList( response ) {
 
 function taskComplete(){
     console.log( 'in taskComplete' );
-    let finishedTask = $(this).data( 'id' );
-    let thisTask = $(this).data( 'complete' );
-    console.log( finishedTask );
+    let taskID = $(this).data( 'id' );
+    let taskComplete = $(this).data( 'complete' );
+    console.log( taskID );
+    console.log( taskComplete );
     $.ajax({
         method: 'PUT',
-        url: '/list/' + finishedTask + thisTask
+        url: `/list/?taskID=${taskID}&taskComplete=${taskComplete}`
     }).then( function( response ){
         console.log( 'back from taskComplete' );
         getList();

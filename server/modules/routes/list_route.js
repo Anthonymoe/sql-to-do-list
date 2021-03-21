@@ -25,26 +25,27 @@ router.post( '/', (req, res)=>{
     })
 })//end router.post 
 
-router.put( '/:id:complete', ( req, res ) =>{
-    console.log( 'in router.put:', req.params );
+// works for single digit ids once you hit 10 it no longer works. 
+router.put( '/', ( req, res ) =>{
+    console.log( 'in router.put:', req.query );
     let queryString;
-    if ( req.params.complete == 'true' ){
+    if ( req.query.taskComplete == 'true' ){
         queryString = `UPDATE "items" SET "completed" = false WHERE "id" = $1`;
     }else {
         queryString = `UPDATE "items" SET "completed" = true WHERE "id" = $1`;
     }
-    pool.query( queryString , [req.params.id]).then( (results) =>{
+    pool.query( queryString , [req.query.taskID]).then( (results) =>{
         res.sendStatus( 200 );
     }).catch( (err) =>{
         res.sendStatus( 500 );
-        console.log( err );
+        console.log( err )
     })
 })//end router.put
 
 router.delete( '/:id', ( req, res ) =>{
     console.log( 'in router.delete:', req.params );
     let queryString = `DELETE FROM "items" WHERE "id" = $1`;
-    pool.query( queryString , [req.params.id]).then( (results) =>{
+    pool.query( queryString , [req.params.id,]).then( (results) =>{
         res.sendStatus( 200 );
     }).catch( (err) =>{
         res.sendStatus( 500 );
