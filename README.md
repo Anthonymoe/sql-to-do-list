@@ -1,12 +1,11 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Full Stack To Do list
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is my first full stack solo project. For this project I created a to do list. The user is able to create new tasks, update the status of those tasks, and remove them from the list. All of these changes are reflected on the DOM and in the DATABASE. Tech used: HTML, javaScript, jQuery, express, node, pg, SQL, postico.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+![](images/toDoList.png)
+
 
 TO DO
 ===
@@ -23,10 +22,10 @@ Phase 1: Set up full stack with GET route and db
 Phase 2:
 
 
-- set up GET route and make sure that response is appending to DOM [x]
-- create front end experience that allows a user to create a task [x]
-    - When the Task is created, it should be stored inside of a database - POST [x]
+- set up GET route and make sure that response is appending to DOM 
+- create front end experience that allows a user to create a task 
+    - When the Task is created, it should be stored inside of a database - POST
 - set up PUT to update tasks being completed. 
     -button click to change Completed: from No to Yes or vice versa
-    -button click will change bacground color of td to green if Yes
+    -button click will change background color of td to green if Yes
     -button click will update database to reflect changes. 
